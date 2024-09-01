@@ -1,0 +1,10 @@
+.footer{
+    background: #FEFAE0;
+}
+.footer h1{
+    font-family: "Permanent Marker", cursive;
+    color:rgb(37, 180, 116);
+}
+.footer a:hover{
+    color: rgb(223, 5, 5) !important;
+}

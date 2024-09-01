@@ -1,0 +1,20 @@
+.cate a i:hover {
+    color: rgb(222, 143, 143) !important;
+    transform: scale(1.1);
+}
+
+.cate a i {
+    transition-duration: 200ms;
+}
+.cate a .bg-color{
+    background-color: rgb(222, 222, 222);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 100%;
+}
+.cate a i {
+    background: linear-gradient(to bottom, #878D5D, #25B474); /* Define the gradient colors */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+  
+}
