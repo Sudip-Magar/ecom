@@ -38,7 +38,7 @@ function Banneer() {
             <p className="text-secondary">Browse Our Extensive Collection of Books Across Different Genres.</p>
             </div>
           {Catdata.map((a)=>(
-            <div className="text-center col-6  col-sm-4 col-lg-2 cate">
+            <div className="text-center col-6  col-sm-4 col-lg-2 cate" key={a.id}>
             <Link className="text-decoration-none  " to={`/category/${a.title}`}>
               <div className="bg-color"><i className={`${a.i} fs-1 text-info`}></i></div>
               <p className="text-dark">{a.title}</p>

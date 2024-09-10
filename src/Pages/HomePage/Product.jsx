@@ -2,14 +2,17 @@ import React from "react";
 import Data from "../../Data/Data";
 import "../css/Hproduct.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../../Redux/Action";
 
 function Product(props) {
-  const navigate = useNavigate(); // Initialize useNavigate
   let data = Data.filter((ab) => ab.off == props.dd);
-
-  let addcart=()=>{
-    setCart(cart+1)
+  const dispatch=useDispatch()
+  const addcart=(a)=>{
+    dispatch(addtocart(a))
   }
+
+  
 
   return (
     <div>
@@ -19,7 +22,7 @@ function Product(props) {
             <h2>{props.dd}</h2>
             <Link
               className="text-decoration-none text-secondary btn-link"
-              to={`/Detail/${props.dd}`}
+              to={`/showall/${props.dd}`}
             >
               Show All
             </Link>
@@ -35,10 +38,10 @@ function Product(props) {
                     By {a.author}
                   </p>
                   <p className="fsize fw-bold">Rs. {a.disc}</p>
-                  </div>
+                </div>
               </Link>
-                  <button className="btn" onClick={addcart}>ADD TO CART</button>
-                
+              <button className="btn" onClick={()=>addcart(a)}>ADD TO CART</button>
+
             </div>
           ))}
         </div>

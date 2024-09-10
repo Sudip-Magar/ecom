@@ -10,8 +10,11 @@ import Category from "../Pages/HomePage/Category.jsx";
 import AboutUs from "../Pages/AboutUs.jsx";
 import ContactUs from "../Pages/ContactUs.jsx";
 import Shop from "../Pages/Shop.jsx";
+import ShowAll from "../Pages/HomePage/ShowAll.jsx";
+import { useSelector } from "react-redux";
 
-function Header({cart}) {
+function Header() {
+  const count=useSelector(state=>state.cart)
   
   return (
     <>
@@ -69,9 +72,11 @@ function Header({cart}) {
               <i className="fa-solid fa-cart-shopping text-dark fs-4">
 
               </i>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                1<span className="visually-hidden">unread messages</span>
-              </span>
+              {count.length>0 ? <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {count.length}
+              </span> : <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                0
+              </span>}
             </button>
             <button
               type="button"
@@ -91,6 +96,7 @@ function Header({cart}) {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/shop" element={<Shop/>} />
         <Route path="/detail/:id" element={<Detail />} />
+         <Route path="/showall/:category" element={<ShowAll/>}/>
       </Routes>
     </>
   );

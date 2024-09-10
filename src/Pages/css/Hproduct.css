@@ -81,6 +81,7 @@
     padding: 10px;
     font-size: 15px;
     border-radius: 10px;
+    z-index: 1000;
 
 }
 .end-sec .shadows{
