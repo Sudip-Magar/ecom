@@ -1,9 +1,15 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Data from "../../Data/Data"; // Assuming Data is your product data
+import { useDispatch } from "react-redux";
+import { addtocart } from "../../Redux/Action";
 
 function ShowAll() {
   const { category } = useParams(); // Get the category from the URL
+  const dispatch=useDispatch();
+  const addcart=(product)=>{
+   dispatch(addtocart(product))
+  }
 
   // Filter products based on the category
   const filteredData = Data.filter((product) => product.off === category);
@@ -27,7 +33,7 @@ function ShowAll() {
               <p className="fsize fw-bold">Rs. {product.disc}</p>
             </div>
           </Link>
-          <button className="btn">ADD TO CART</button>
+          <button className="btn" onClick={()=>addcart(product)}>ADD TO CART</button>
         </div>
         ))}
       </div>

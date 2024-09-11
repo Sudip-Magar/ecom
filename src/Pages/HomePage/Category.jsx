@@ -3,8 +3,15 @@ import Data from "../../Data/Data";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../../Redux/Action";
+
 
 function Category() {
+  const dispatch=useDispatch();
+  const addcart=(cc)=>{
+    dispatch(addtocart(cc))
+  }
   let { cid } = useParams();
   let data = Data.filter((ab) => ab.cate == cid);
   return (
@@ -26,7 +33,7 @@ function Category() {
                 <p className="fsize fw-bold">Rs. {cc.disc}</p>
               </div>
             </Link>
-            <button className="btn">ADD TO CART</button>
+            <button className="btn" onClick={()=>addcart(cc)}>ADD TO CART</button>
           </div>
         ))}
       </div>

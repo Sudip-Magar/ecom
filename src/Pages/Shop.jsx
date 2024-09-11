@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import Data from "../Data/Data";
 import { Link } from "react-router-dom";
 import './css/Shop.css'
+import { useDispatch } from "react-redux";
+import { addtocart } from "../Redux/Action";
 function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('All'); // State to track selected category
+  const dispatch=useDispatch();
+  const addcart=(product)=>{
+    dispatch(addtocart(product))
+  }
 
   // Get unique categories from the products data
   const categories = ['All', ...new Set(Data.map(product => product.cate))];
@@ -52,7 +58,7 @@ function Shop() {
                       <p className="fsize fw-bold">Rs. {product.disc}</p>
                     </div>
                   </Link>
-                  <button className="btn">ADD TO CART</button>
+                  <button className="btn" onClick={()=>addcart(product)}>ADD TO CART</button>
                 </div>
               ))}
             </div>

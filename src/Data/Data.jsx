@@ -131,7 +131,7 @@ const Data=[
         off: 'Best Offer Books',
         disc: 150
     },
-    {
+    { 
         id: 6,
         id2:1,
         title: 'The Icelandic Voyage',
