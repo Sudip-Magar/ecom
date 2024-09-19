@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -30,9 +31,9 @@ function Footer() {
           <div className="col-lg-3 py-4">
           <h4 className='fw-bolder'>Quick Links</h4>
             <ul className='list-unstyled my-4'>
-            <li className='my-2'><a href="" className='text-decoration-none text-dark '>About Us</a></li>
-              <li className='my-2'><a href="" className='text-decoration-none text-dark '>Shop</a></li>
-              <li className='my-2'><a href="" className='text-decoration-none text-dark '>Contact</a></li>
+            <li className='my-2'><Link to="/about" className='text-decoration-none text-dark '>About Us</Link></li>
+              <li className='my-2'><Link to="/shop" className='text-decoration-none text-dark '>Shop</Link></li>
+              <li className='my-2'><Link to="/contact" className='text-decoration-none text-dark '>Contact</Link></li>
             </ul>
           </div>
 

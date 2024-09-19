@@ -12,6 +12,10 @@ import ContactUs from "../Pages/ContactUs.jsx";
 import Shop from "../Pages/Shop.jsx";
 import ShowAll from "../Pages/HomePage/ShowAll.jsx";
 import { useSelector } from "react-redux";
+import Cart from "../Pages/cart.jsx";
+import Login from "../Pages/Login.jsx";
+import Checkout from "../Pages/Checkout.jsx";
+import Register from "../Pages/Register.jsx";
 
 function Header() {
   const count=useSelector(state=>state.cart)
@@ -65,7 +69,7 @@ function Header() {
           </form>
 
           <div className="my-3 text-end cart-user">
-            <button
+            <Link to='/cart'
               type="button"
               className="btn position-relative mx-1"
             >
@@ -77,13 +81,13 @@ function Header() {
               </span> : <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 0
               </span>}
-            </button>
-            <button
+            </Link>
+            <Link to='/login'
               type="button"
               className="btn  rounded-circle position-relative"
             >
               <i className="fa-solid fa-user text-dark fs-4"></i>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -97,6 +101,11 @@ function Header() {
         <Route path="/shop" element={<Shop/>} />
         <Route path="/detail/:id" element={<Detail />} />
          <Route path="/showall/:category" element={<ShowAll/>}/>
+         <Route path="/cart" element={<Cart/>}/>
+         <Route path="/login" element={<Login/>}/>
+         <Route path="/checkout" element={<Checkout/>}/>
+         <Route path="/register" element={<Register/>}/>
+         
       </Routes>
     </>
   );

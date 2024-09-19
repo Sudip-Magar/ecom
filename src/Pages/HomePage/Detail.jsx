@@ -8,7 +8,7 @@ function Detail() {
   let { id } = useParams();
   let [qty, setQty] = useState(1);
   let [message, setMessage] = useState("");
-  let det = Data.find((a) => a.id == id);
+  let det = Data.find((a) => a.id == id)
 
   let decrease = () => {
     if (qty == 1) {

@@ -1,0 +1,51 @@
+.quantity button{
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 2px;
+    border-radius: 4px;
+}
+.quantity button:hover{
+    background: #25B474;
+    color: white;
+    transform: none;
+}
+.quantity p{
+    padding: 0 10px;
+    font-size: 20px;
+}
+.remove button{
+    border: none;
+    background: red;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 64px;
+}
+.checkout button{
+    background: #25B474;
+    color: white;
+    border: none;
+    padding:  5px 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+.checkout button:hover{
+    background: #197a4f;
+}
+.remove button:hover{
+    background: rgb(187, 0, 0);
+}
+/* checkout*/
+.text{
+    text-align: right;
+    display: inline-block;
+}
+@media(max-width:767px){
+    .remove button{
+        margin-top: 2px;
+        text-align: center;
+    }
+}
